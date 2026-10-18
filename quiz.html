@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#243247">
+  <title>Quiz de España · Descubre España</title>
+  <link rel="stylesheet" href="quiz.css">
+  <script>
+    /* Low-spec / data-saver / reduced-motion devices get the light mode: entrance only, no looping animation */
+    (function(){var n=navigator,c=n.connection||{};
+      if((n.hardwareConcurrency&&n.hardwareConcurrency<=2)||(n.deviceMemory&&n.deviceMemory<=2)||c.saveData)
+        document.documentElement.classList.add('lite');})();
+  </script>
+</head>
+<body>
+  <header class="quiz-header">
+    <a class="quiz-brand" href="start.html" aria-label="Volver a Descubre España">
+      <strong>Descubre <span>España</span></strong>
+      <small>APORTE DE SAIRUPESH</small>
+    </a>
+    <nav class="quiz-nav" aria-label="Navegación principal">
+      <a class="nav-link active" href="#welcome" data-view="welcome"><span>Bienvenida</span><small>Welcome</small></a>
+      <a class="nav-link" href="#quiz" data-view="quiz"><span>Cuestionario</span><small>Quiz</small></a>
+      <a class="nav-link" href="#leaderboard" data-view="leaderboard"><span>Clasificación</span><small>Leaderboard</small></a>
+      <a class="nav-link" href="#experience" data-view="experience"><span>Mi experiencia</span><small>My experience</small></a>
+      <a class="nav-link nav-cover" href="start.html"><span>Portada</span><small>Start page</small></a>
+    </nav>
+  </header>
+
+  <main class="quiz-main">
+    <section id="welcome" class="quiz-view mw-stage" aria-labelledby="welcome-title">
+      <div class="mw-intro">
+        <p class="mw-kicker">CULTURA · VIAJES · FÚTBOL</p>
+        <h1 class="mw-wordmark" id="welcome-title">Descubre<span>España</span></h1>
+        <div class="mw-rule"></div>
+        <h2 class="mw-tagline">Una revista.<br>Un país.<br>60 preguntas.</h2>
+        <p class="mw-copy">¿Cuánto sabes de España? Pon a prueba tus conocimientos sobre gastronomía, destinos, fiestas populares y fútbol, desde las fiestas de San Fermín hasta el FC Barcelona.
+          <span class="mw-en">How much do you know about Spain? Test your knowledge of Spanish food, destinations, festivals and football.</span></p>
+        <button class="button button-primary mw-play" type="button" data-go-view="quiz">Entrar al cuestionario <span aria-hidden="true">↗</span></button>
+        <div class="mw-credit">
+          <div><span class="mini-label">CREADO POR</span><strong>Sairupesh</strong></div>
+          <div><span class="mini-label">N.º DE REGISTRO</span><strong>25BCE1578</strong></div>
+          <div><span class="mini-label">PUNTUACIÓN</span><strong>Fácil 1 · Medio 3 · Difícil 5 · Mixto 1</strong></div>
+        </div>
+      </div>
+
+      <div class="mw-magazines" role="img" aria-label="Vista previa de una revista sobre España">
+        <article class="mw-back" aria-hidden="true">
+          <div class="mw-back-head"><span class="mw-back-brand">DESCUBRE · DEPORTES</span><span>BARCELONA / FÚTBOL</span></div>
+          <h2 class="mw-back-title">FC<br><span>BARÇA</span></h2>
+          <div class="mw-stripes"></div>
+          <div class="mw-back-photo"><img src="https://www.fcbarcelona.com/photo-resources/fcbarcelona/photo/2018/06/20/dbad88f5-bbb8-4cdc-a77d-66ca42cd89e0/PjBWxnVp.jpg?height=750&amp;width=1200" alt="" loading="lazy" onerror="this.remove()"></div>
+          <div class="mw-back-section">
+            <span class="mw-tag">FÚTBOL · IDENTIDAD</span>
+            <h3>Más que un club</h3>
+            <p>Los colores blaugrana, la afición y las grandes noches de fútbol hacen del FC Barcelona una parte reconocible de la cultura deportiva de la ciudad.</p>
+          </div>
+          <div class="mw-back-footer">PASIÓN · EQUIPO · BARCELONA</div>
+        </article>
+
+        <article class="mw-front" aria-hidden="true">
+          <div class="mw-mag-head"><span class="mw-mag-logo">DESCUBRE ESPAÑA · EDICIÓN ESPECIAL</span><span class="mw-mag-menu">CULTURA &nbsp; VIAJES &nbsp; SABORES &nbsp; FÚTBOL</span></div>
+          <p class="mw-cover-title">¿CUÁNTO<br>SABES DE <span>ESPAÑA?</span></p>
+          <div class="mw-ticker"><span class="mw-tick-label">✦ EN ESTA EDICIÓN</span><div class="mw-tick-win"><div class="mw-tick-track"><span>SAN FERMÍN · PAELLA · FLAMENCO · FC BARCELONA · 60 PREGUNTAS · </span><span aria-hidden="true">SAN FERMÍN · PAELLA · FLAMENCO · FC BARCELONA · 60 PREGUNTAS · </span></div></div></div>
+          <div class="mw-cover-intro">
+            <p class="mw-cover-head">San Fermín:<br><span>la emoción del encierro</span></p>
+            <p>En Pamplona, el encierro de San Fermín llena las calles de corredores y toros. Es una de las tradiciones más conocidas de España.</p>
+          </div>
+          <div class="mw-photo">
+            <img src="encierro.png" alt="" width="932" height="524">
+            <span class="mw-photo-label">FIESTAS DE ESPAÑA · PAMPLONA, NAVARRA</span>
+          </div>
+          <div class="mw-cover-bottom">
+            <div class="mw-mini">
+              <div class="mw-mini-visual">🥘</div>
+              <div><h3>Sabores que cuentan historias</h3><p>Paella, tapas, churros y gazpacho: la gastronomía también forma parte del viaje por España.</p></div>
+            </div>
+            <div class="mw-challenge">
+              <span class="mw-issue">EL RETO · 01 / 60</span>
+              <h3>¿Te atreves a jugar?</h3>
+              <p>Elige tu dificultad, demuestra lo que sabes y consigue tu lugar en la clasificación.</p>
+            </div>
+          </div>
+          <div class="mw-cover-footer"><span><strong>SAIRUPESH</strong> · 25BCE1578</span><span>GASTRONOMÍA ✦ CULTURA ✦ FÚTBOL</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="quiz" class="quiz-view" aria-labelledby="quiz-title" hidden>
+      <div class="section-heading">
+        <p class="eyebrow">PON A PRUEBA TUS CONOCIMIENTOS</p>
+        <h1 id="quiz-title">Quiz de España</h1>
+        <p>Introduce tus datos y elige la dificultad antes de empezar. La puntuación depende del modo elegido.</p>
+      </div>
+
+      <div id="credential-panel" class="surface credentials-surface">
+        <div class="surface-heading">
+          <span class="step-number">01</span>
+          <div><h2>Antes de comenzar</h2><p>Datos del participante <span class="muted-en">Participant details</span></p></div>
+        </div>
+        <form id="credential-form" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="participant-name">Nombre completo <span>Name</span></label>
+              <input id="participant-name" name="participantName" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Escribe tu nombre" required>
+              <small class="field-error" id="name-error"></small>
+            </div>
+            <div class="form-field">
+              <label for="participant-reg">N.º de registro <span>Registration number</span></label>
+              <input id="participant-reg" name="participantReg" type="text" minlength="4" maxlength="24" autocapitalize="characters" placeholder="Ej. 25BCE1578" required>
+              <small class="field-error" id="reg-error"></small>
+            </div>
+            <div class="form-field full-field">
+              <label for="participant-email">Correo electrónico <span>Email address</span></label>
+              <input id="participant-email" name="participantEmail" type="email" autocomplete="email" maxlength="120" placeholder="nombre@ejemplo.com" required>
+              <small class="field-error" id="email-error"></small>
+            </div>
+          </div>
+          <fieldset class="difficulty-fieldset">
+            <legend>Elige tu dificultad <span class="legend-en">Choose your difficulty</span></legend>
+            <div class="difficulty-options" id="difficulty-options" role="radiogroup" aria-label="Nivel de dificultad">
+              <label class="difficulty-card">
+                <input type="radio" name="difficulty" value="easy">
+                <span class="difficulty-number">01</span>
+                <span class="difficulty-copy"><strong>Fácil <small>· Easy</small></strong><span>20 preguntas</span><b>1 punto por acierto</b></span>
+              </label>
+              <label class="difficulty-card">
+                <input type="radio" name="difficulty" value="medium">
+                <span class="difficulty-number">03</span>
+                <span class="difficulty-copy"><strong>Medio <small>· Medium</small></strong><span>20 preguntas</span><b>3 puntos por acierto</b></span>
+              </label>
+              <label class="difficulty-card">
+                <input type="radio" name="difficulty" value="hard">
+                <span class="difficulty-number">05</span>
+                <span class="difficulty-copy"><strong>Difícil <small>· Hard</small></strong><span>20 preguntas</span><b>5 puntos por acierto</b></span>
+              </label>
+              <label class="difficulty-card difficulty-mixed">
+                <input type="radio" name="difficulty" value="mixed">
+                <span class="difficulty-number">mix</span>
+                <span class="difficulty-copy"><strong>Mixto <small>· Mixed</small></strong><span>60 preguntas · 20 de cada nivel</span><b>1 punto por acierto en todas</b></span>
+              </label>
+            </div>
+            <small class="field-error difficulty-error" id="difficulty-error" role="alert"></small>
+          </fieldset>
+          <div class="privacy-note"><span aria-hidden="true">ⓘ</span><p>Los datos y las puntuaciones se guardan solo en el almacenamiento de este navegador. No se envían a un servidor ni se comparten entre dispositivos. La clasificación se muestra por modo para comparar puntuaciones equivalentes.</p></div>
+          <button class="button button-primary" type="submit">Validar datos y empezar <span aria-hidden="true">→</span></button>
+        </form>
+      </div>
+
+      <div id="quiz-stage" class="surface quiz-surface" hidden>
+        <div class="quiz-topline"><span id="round-label" class="round-label">MODO MIXTO · 1 PUNTO POR ACIERTO</span><span id="question-count" class="question-count">Pregunta 1 de 60</span></div>
+        <div class="progress-track" role="progressbar" aria-label="Progreso del cuestionario" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0" id="quiz-progress"><div id="progress-fill" class="progress-fill"></div></div>
+        <div class="question-body">
+          <p class="question-kicker" id="question-kicker">PREGUNTA 01 · NIVEL FÁCIL · 1 PUNTO</p>
+          <h2 id="question-text">Pregunta</h2>
+          <div id="answer-options" class="answer-options" role="group" aria-label="Opciones de respuesta"></div>
+          <p id="answer-warning" class="answer-warning" role="status" hidden>Selecciona una respuesta para continuar.</p>
+        </div>
+        <div class="quiz-controls"><button class="button button-quiet" type="button" id="previous-question">← Anterior</button><span class="autosave-hint">Tu respuesta se mantiene mientras haces el quiz.</span><button class="button button-primary" type="button" id="next-question">Siguiente →</button></div>
+      </div>
+
+      <div id="result-panel" class="surface result-surface" hidden aria-live="polite">
+        <p class="eyebrow">CUESTIONARIO COMPLETADO</p>
+        <h2 id="result-heading">¡Buen trabajo!</h2>
+        <p id="result-description" class="result-description"></p>
+        <div class="result-summary">
+          <div id="score-ring" class="score-ring"><div><strong id="score-value">0/60</strong><span>PUNTOS</span></div></div>
+          <div class="score-details"><div><span>Modo elegido</span><strong id="score-mode">—</strong></div><div><span>Respuestas correctas</span><strong id="correct-count">0</strong></div><div><span>Porcentaje de aciertos</span><strong id="score-percent">0%</strong></div><div><span>Participante</span><strong id="score-participant">—</strong></div></div>
+        </div>
+        <p id="save-status" class="privacy-note result-note"></p>
+        <div class="result-actions"><button class="button button-primary" type="button" data-go-view="leaderboard">Ver clasificación →</button><button class="button button-outline" type="button" id="try-again">Intentar de nuevo</button></div>
+      </div>
+    </section>
+
+    <section id="leaderboard" class="quiz-view" aria-labelledby="leaderboard-title" hidden>
+      <div class="section-heading">
+        <p class="eyebrow">LOS RESULTADOS MÁS ALTOS</p>
+        <h1 id="leaderboard-title">Clasificación</h1>
+        <p>Consulta las mejores puntuaciones de cada modo. Las clasificaciones se mantienen separadas porque cada dificultad tiene un valor de puntos distinto.</p>
+      </div>
+      <div class="surface leaderboard-surface">
+        <div class="leaderboard-heading"><div><span class="step-number">★</span><h2>Tabla de puntuaciones</h2></div><div class="leaderboard-actions"><label for="leaderboard-mode-filter">Modo de juego</label><select id="leaderboard-mode-filter"><option value="mixed">Mixto · 1 punto</option><option value="easy">Fácil · 1 punto</option><option value="medium">Medio · 3 puntos</option><option value="hard">Difícil · 5 puntos</option></select><button id="refresh-leaderboard" class="button button-quiet" type="button">Actualizar ↻</button></div></div>
+        <div class="table-wrap"><table><thead><tr><th>Pos.</th><th>Participante</th><th>N.º de registro</th><th>Puntos</th><th>Aciertos</th><th>Fecha</th></tr></thead><tbody id="leaderboard-body"></tbody></table></div>
+        <p id="leaderboard-empty" class="empty-state" hidden>Aún no hay puntuaciones en este modo. Completa el cuestionario para aparecer en la clasificación.</p>
+        <p class="leaderboard-footnote">Nota: los resultados se guardan localmente en este navegador; no constituyen una clasificación global en línea.</p>
+      </div>
+    </section>
+
+    <section id="experience" class="quiz-view" aria-labelledby="experience-title" hidden>
+      <div class="section-heading">
+        <p class="eyebrow">MI APRENDIZAJE</p>
+        <h1 id="experience-title">Mi experiencia con esta tarea</h1>
+        <p class="muted-en">My experience from this assignment</p>
+      </div>
+      <article class="surface story-surface">
+        <header class="story-author">
+          <div class="story-avatar" aria-hidden="true">S</div>
+          <div><strong>SAIRUPESH BHIMAVARAPU </strong><span>N.º de registro: 25BCE1578 <em></em></span></div>
+        </header>
+        <div class="story-lang story-es"><span class="story-tag">Español</span><p lang="es">Al hacer este proyecto aprendí muchísimo sobre la cultura española. Descubrí su gastronomía, con platos como la paella, las tapas, el gazpacho y los churros con chocolate, y conocí fiestas famosas como La Tomatina, San Fermín con su encierro, y las Fallas de Valencia. También aprendí mucho sobre el fútbol, que es una parte muy importante de la vida en España, y sobre todo sobre el FC Barcelona. Me impresionó que sea «más que un club», con sus colores blaugrana, su gran afición y sus noches de fútbol en el Camp Nou. Al escribir las preguntas en español, aprendí palabras nuevas sin darme cuenta. Me sentí muy orgulloso al ver el quiz terminado, y ahora quiero seguir aprendiendo.</p></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="quiz-footer"><span>© Descubre España</span><span>Quiz de cultura española · Sairupesh · 25BCE1578</span></footer>
+  <script src="quiz.js"></script>
+</body>
+</html>

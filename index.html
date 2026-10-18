@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descubre España – Guía de viaje por España</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="fancy.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="#top" data-view="">Descubre <span>España</span></a>
+  <nav aria-label="Principal / Main">
+    <a href="#top" data-view="" data-en="Home">Inicio</a>
+    <a href="#book" data-view="book" data-en="Plan your trip">Planifica tu viaje</a>
+    <a href="#journal" data-view="journal" data-en="Feedback Journal">Diario de opiniones</a>
+    <a href="#experience" data-view="experience" data-en="My experience">Mi experiencia</a>
+    <a href="start.html" data-en="Start page">Portada</a>
+  </nav>
+</header>
+
+<main id="top">
+  <div id="home">
+    <section class="hero">
+      <div class="sun" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="pill" data-en="12 cities · day-by-day plans · any budget">12 ciudades · planes día a día · cualquier presupuesto</p>
+        <h1>España, planeada <em>a tu manera</em><span class="en">Spain, planned your way</span></h1>
+        <p class="lead" data-en="Choose your cities, set your budget, and get a ready-made itinerary in seconds.">Elige tus ciudades, fija tu presupuesto y recibe un itinerario listo en segundos.</p>
+        <div class="cta">
+          <a class="btn" href="#book" data-view="book" data-en="Plan my trip">Planear mi viaje</a>
+          <a class="btn alt" href="#journal" data-view="journal" data-en="Read traveller stories">Leer historias de viajeros</a>
+        </div>
+      </div>
+      <svg class="arches" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 80V40Q50 0 100 40T200 40 300 40 400 40 500 40 600 40 700 40 800 40 900 40 1000 40 1100 40 1200 40V80Z"/></svg>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="track">Barcelona ✦ Madrid ✦ Sevilla ✦ Granada ✦ Valencia ✦ Bilbao ✦ San Sebastián ✦ Toledo ✦ Ibiza ✦ Santiago de Compostela ✦ Málaga ✦ Córdoba ✦ Barcelona ✦ Madrid ✦ Sevilla ✦ Granada ✦ Valencia ✦ Bilbao ✦ San Sebastián ✦ Toledo ✦ Ibiza ✦ Santiago de Compostela ✦ Málaga ✦ Córdoba ✦ </div></div>
+
+    <section class="wrap features">
+      <article class="feature"><span class="num">01</span>
+        <h3 data-en="Choose your cities">Elige tus ciudades</h3>
+        <p data-en="Explore twelve iconic destinations across Spain.">Explora doce destinos icónicos de toda España.</p></article>
+      <article class="feature"><span class="num">02</span>
+        <h3 data-en="Set your budget">Fija tu presupuesto</h3>
+        <p data-en="From shoestring to luxury, with estimated costs.">Del viaje económico al lujo, con costes estimados.</p></article>
+      <article class="feature"><span class="num">03</span>
+        <h3 data-en="Follow the map">Sigue el mapa</h3>
+        <p data-en="See every day with walking routes and distances.">Ve cada día con rutas a pie y distancias.</p></article>
+    </section>
+  </div>
+
+  <section id="book" class="wrap" aria-labelledby="book-h" hidden>
+    <h2 id="book-h" data-en="Book your trip">Reserva tu viaje</h2>
+    <p class="sub" data-en="Pick one or more destinations, then tell us how long and how much.">Elige uno o más destinos y dinos cuánto tiempo y cuánto presupuesto tienes.</p>
+    <form id="plan-form" class="panel" novalidate>
+      <fieldset>
+        <legend data-en="1 · Choose destinations">1 · Elige tus destinos</legend>
+        <div id="cards" class="grid"></div>
+        <p class="error" id="err-dest" role="alert"></p>
+      </fieldset>
+      <p class="legend2" data-en="2 · Your trip details">2 · Los detalles de tu viaje</p>
+      <div class="row">
+        <div class="field">
+          <label for="days" data-en="Number of days">Número de días</label>
+          <input id="days" type="number" step="1" placeholder="p. ej. 5 · e.g. 5" aria-describedby="err-days">
+          <p class="error" id="err-days" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="level" data-en="Budget level">Nivel de presupuesto</label>
+          <select id="level">
+            <option value="budget">Económico · Budget</option>
+            <option value="mid" selected>Medio · Mid-range</option>
+            <option value="luxury">Lujo · Luxury</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="amount" data-en="Total budget in € (optional)">Presupuesto total en € (opcional)</label>
+          <input id="amount" type="number" min="0" placeholder="p. ej. 800 · e.g. 800" aria-describedby="err-amount">
+          <p class="error" id="err-amount" role="alert"></p>
+        </div>
+      </div>
+      <button class="btn" type="submit" data-en="Plan my trip">Planear mi viaje</button>
+    </form>
+    <div id="result" aria-live="polite"></div>
+  </section>
+
+  <section id="journal" class="wrap" aria-labelledby="j-h" hidden>
+    <h2 id="j-h" data-en="Feedback Journal">Diario de opiniones</h2>
+    <p class="sub" data-en="Share how your trip went and read what others thought.">Cuenta cómo te fue en tu viaje y lee lo que opinan otros.</p>
+    <form id="journal-form" class="panel" novalidate>
+      <div class="row">
+        <div class="field">
+          <label for="j-name" data-en="Name">Nombre</label>
+          <input id="j-name" type="text" autocomplete="name">
+          <p class="error" id="err-name" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="j-dest" data-en="Destination">Destino</label>
+          <select id="j-dest"></select>
+          <p class="error" id="err-jdest" role="alert"></p>
+        </div>
+      </div>
+      <fieldset class="field">
+        <legend data-en="Rating">Valoración</legend>
+        <div class="stars" id="stars"></div>
+        <p class="error" id="err-rating" role="alert"></p>
+      </fieldset>
+      <div class="field">
+        <label for="j-text" data-en="Your review">Tu reseña</label>
+        <textarea id="j-text" rows="4"></textarea>
+        <p class="error" id="err-text" role="alert"></p>
+      </div>
+      <button class="btn" type="submit" data-en="Submit review">Enviar reseña</button>
+    </form>
+    <ul id="entries" class="entries"></ul>
+  </section>
+
+  <section id="experience" class="wrap" aria-labelledby="x-h" hidden>
+    <h2 id="x-h" data-en="My experience from this assignment">Mi experiencia con esta tarea</h2>
+    <article class="story">
+      <header class="author">
+        <div class="avatar" aria-hidden="true">K</div>
+        <div class="who">
+          <strong>POLISETTY L V KRISHNA SAI</strong>
+          <span data-en="Reg. No.: 25BCE1876">N.º de registro: 25BCE1876</span>
+        </div>
+      </header>
+
+      <div class="lang es-block">
+        <span class="tagl">Español</span>
+        <p lang="es">Cuando empecé este proyecto, estaba ocupado haciendo los botones, los formularios y los mensajes de error, y cada vez averiguaba qué significaba cada línea en español. Al poco tiempo me di cuenta de que ya sabía palabras como “Descubre”, “Mañana” y “Presupuesto”, y frases enteras como “Elige tus ciudades” y “Gracias”, sin haberme sentado a estudiarlas. Nunca me pareció un trabajo duro porque me divertía construir la página, y entendía las palabras viendo para qué servían en la pantalla. Lo mejor fue abrir la web terminada y poder leerla yo mismo. Me dio mucha alegría ver que algo que hice, en español, funcionaba de verdad. Ahora quiero seguir y aprender más.</p>
+      </div>
+
+      <div class="lang en-block">
+        <span class="tagl">English</span>
+        <p lang="en">When I started this project, I was busy making the buttons, the forms and the little error messages, and I kept figuring out what each Spanish line meant. After a while I noticed I already knew words like “Descubre”, “Mañana” and “Presupuesto”, and whole lines like “Elige tus ciudades” and “Gracias”, without ever sitting down to study them. It never felt like hard work because I was having fun building the site, and I understood the words by seeing what they did on the page. The best part was opening the finished website and reading it myself. It felt really good to see something I made, in Spanish, actually work. Now I want to keep going and learn more.</p>
+      </div>
+    </article>
+  </section>
+</main>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<footer class="site-footer"><p data-en="© Descubre España · Itineraries are estimates; check opening hours before you go.">© Descubre España · Los itinerarios son estimaciones; consulta los horarios antes de viajar.</p></footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+<script src="extras.js"></script>
+</body>
+</html>

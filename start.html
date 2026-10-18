@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descubre España · Explora y aprende</title>
+<style>
+:root{--bg:#070d18;--bg2:#0d1b2e;--ink:#e8eef7;--mute:#8fa3bd;--line:rgba(255,255,255,.10);--accent:#34d3c0;--accent2:#7aa2ff;--sans:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;display:flex;flex-direction:column;font-family:var(--sans);color:var(--ink);background:radial-gradient(1000px 560px at 50% 45%,#14395a 0%,transparent 62%),linear-gradient(180deg,var(--bg2),var(--bg));overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse at center,#000 25%,transparent 72%);mask-image:radial-gradient(ellipse at center,#000 25%,transparent 72%)}
+.top{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;padding:1.1rem clamp(1.2rem,4vw,3rem);border-bottom:1px solid var(--line);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mute)}
+.top b{color:var(--ink);font-weight:700;letter-spacing:.26em}.top b span{color:var(--accent)}
+main{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;padding:2rem 1rem}
+.eyebrow{font-size:.8rem;letter-spacing:.32em;text-transform:uppercase;color:var(--mute);text-align:center}.eyebrow::before,.eyebrow::after{content:"";display:inline-block;width:34px;height:1px;background:var(--mute);vertical-align:middle;margin:0 .9rem;opacity:.6}
+.entry-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;width:min(1120px,94vw)}
+.guide-btn{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;width:100%;height:clamp(350px,51vh,470px);min-width:0;padding:clamp(1.25rem,2.4vw,2.2rem);border-radius:22px;text-decoration:none;color:var(--ink);background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.18);box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.14);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.guide-btn::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2))}.guide-btn.quiz-card::before{background:linear-gradient(90deg,#f4a261,#ffd28a,#34d3c0)}
+.guide-btn::after{content:"";position:absolute;width:340px;height:340px;right:-120px;bottom:-160px;background:radial-gradient(circle,rgba(52,211,192,.22),transparent 65%);pointer-events:none;transition:opacity .35s;opacity:.6}
+.guide-btn.quiz-card::after{background:radial-gradient(circle,rgba(244,162,97,.23),transparent 65%)}
+.guide-btn:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 40px 100px rgba(52,211,192,.16),0 30px 80px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.18)}.guide-btn.quiz-card:hover{border-color:#f4a261;box-shadow:0 40px 100px rgba(244,162,97,.14),0 30px 80px rgba(0,0,0,.55)}.guide-btn:hover::after{opacity:1}.guide-btn:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+.btn-top{display:flex;justify-content:space-between;align-items:center;color:var(--accent)}.quiz-card .btn-top{color:#f4a261}
+.glyph{width:46px;height:46px;display:grid;place-items:center;border:1.5px solid currentColor;border-radius:50%;font-size:1.6rem;font-weight:500}
+.chip{font-size:.67rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);padding:.35rem .65rem;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.05);white-space:nowrap}
+.btn-mid{text-align:left}.t-es{display:block;font-weight:800;line-height:1.05;letter-spacing:.02em;font-size:clamp(1.75rem,3.5vw,3.4rem)}.t-en{display:block;margin-top:.65rem;font-weight:600;color:var(--accent);letter-spacing:.23em;font-size:clamp(.78rem,1.35vw,1.1rem)}.quiz-card .t-en{color:#f4a261}
+.btn-bot{display:flex;justify-content:space-between;align-items:flex-end;gap:.75rem;padding-top:1rem;border-top:1px solid var(--line)}.by{font-size:clamp(.7rem,.95vw,.9rem);line-height:1.7;color:var(--mute);letter-spacing:.02em;overflow-wrap:anywhere}.by strong{color:var(--ink);font-weight:600}
+.arrow{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:1.4rem;color:#04111d;background:var(--accent);transition:transform .35s ease}.quiz-card .arrow{background:#f4a261}.guide-btn:hover .arrow{transform:translateX(6px)}
+.guide-btn.map-card::before{background:linear-gradient(90deg,#7aa2ff,#b49bff)}.map-card .btn-top,.map-card .t-en{color:#7aa2ff}.map-card .arrow{background:#7aa2ff}.guide-btn.map-card:hover{border-color:#7aa2ff}
+.guide-btn.phrase-card::before{background:linear-gradient(90deg,#ffd28a,#f4a261)}.phrase-card .btn-top,.phrase-card .t-en{color:#ffd28a}.phrase-card .arrow{background:#ffd28a}.guide-btn.phrase-card:hover{border-color:#ffd28a}
+.entry-grid{row-gap:1.5rem}.guide-btn{height:clamp(300px,42vh,400px)}
+@media(max-width:760px){.guide-btn{height:340px}}
+.foot{position:relative;z-index:1;text-align:center;padding:1.1rem;border-top:1px solid var(--line);color:var(--mute);font-size:.78rem;letter-spacing:.12em}
+@media(max-width:760px){.entry-grid{grid-template-columns:1fr;width:min(560px,94vw)}.guide-btn{height:360px}.eyebrow::before,.eyebrow::after{display:none}.top{font-size:.68rem;letter-spacing:.12em}.top b{letter-spacing:.16em}}
+@media(max-width:390px){.guide-btn{height:330px;padding:1.1rem}.t-es{font-size:1.7rem}.chip{font-size:.58rem}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top"><b>Descubre <span>España</span></b><span>Español · English</span></header>
+<main>
+  <p class="eyebrow">España · Spain</p>
+  <div class="entry-grid" aria-label="Elige una sección / Choose a section">
+    <a class="guide-btn" href="index.html" aria-label="Guía de viaje, Travel Guide. Abrir / Open">
+      <div class="btn-top"><svg viewBox="0 0 48 48" width="46" height="46" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="24" cy="24" r="20"/><path d="M24 8l5 16-5 16-5-16z" fill="currentColor" fill-opacity=".25"/><circle cx="24" cy="24" r="2" fill="currentColor"/></svg><span class="chip">Abrir · Open</span></div>
+      <div class="btn-mid"><span class="t-es">GUÍA DE VIAJE</span><span class="t-en">TRAVEL GUIDE</span></div>
+      <div class="btn-bot"><p class="by">by <strong>NAME:- POLISETTY L V KRISHNA SAI</strong><br>AND <strong>REGNO:- 25BCE1876</strong></p><span class="arrow" aria-hidden="true">→</span></div>
+    </a>
+    <a class="guide-btn quiz-card" href="quiz.html" aria-label="Quiz de cultura española. Abrir / Open">
+      <div class="btn-top"><span class="glyph" aria-hidden="true">✦</span><span class="chip">Jugar · Play</span></div>
+      <div class="btn-mid"><span class="t-es">QUIZ DE ESPAÑA</span><span class="t-en">SPANISH CULTURE & FOOTBALL</span></div>
+      <div class="btn-bot"><p class="by">by <strong>SAIRUPESH</strong><br>REGNO: <strong>25BCE1578</strong><br><span>60 preguntas · 3 niveles</span></p><span class="arrow" aria-hidden="true">→</span></div>
+    </a>
+    <a class="guide-btn map-card" href="map.html" aria-label="Mapa interactivo, Interactive map. Abrir / Open">
+      <div class="btn-top"><span class="glyph" aria-hidden="true">◎</span><span class="chip">Explorar · Explore</span></div>
+      <div class="btn-mid"><span class="t-es">MAPA INTERACTIVO</span><span class="t-en">INTERACTIVE MAP</span></div>
+      <div class="btn-bot"><p class="by">by <strong>BHAVITAVYA BHASKAR</strong><br>REGNO: <strong>25BCE5037</strong></p><span class="arrow" aria-hidden="true">→</span></div>
+    </a>
+    <a class="guide-btn phrase-card" href="phrasebook.html" aria-label="Español de supervivencia, Survival Spanish. Abrir / Open">
+      <div class="btn-top"><span class="glyph" aria-hidden="true">¿?</span><span class="chip">Aprender · Learn</span></div>
+      <div class="btn-mid"><span class="t-es">ESPAÑOL DE SUPERVIVENCIA</span><span class="t-en">SURVIVAL SPANISH</span></div>
+      <div class="btn-bot"><p class="by">by <strong>PAWAN SACHAN</strong><br>REGNO: <strong>25BCE5037</strong></p><span class="arrow" aria-hidden="true">→</span></div>
+    </a>
+  </div>
+</main>
+<footer class="foot">© Descubre España · Explora · Aprende · Juega</footer>
+</body>
+</html>

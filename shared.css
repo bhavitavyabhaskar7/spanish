@@ -1,0 +1,17 @@
+:root{--bg:#070d18;--bg2:#0d1b2e;--ink:#e8eef7;--mute:#8fa3bd;--line:rgba(255,255,255,.10);--panel:rgba(255,255,255,.05);--a:#34d3c0;--sans:"Segoe UI",system-ui,-apple-system,Arial,sans-serif}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:var(--sans);color:var(--ink);line-height:1.6;background:radial-gradient(900px 500px at 50% 0,#14395a 0,transparent 62%),linear-gradient(180deg,var(--bg2),var(--bg)) fixed}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--a);outline-offset:2px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:1rem clamp(1rem,4vw,3rem);border-bottom:1px solid var(--line)}
+.top b{letter-spacing:.2em;text-transform:uppercase;font-size:.85rem}.top b span{color:var(--a)}.top a{color:var(--a);text-decoration:none;font-weight:600}
+main{max-width:1100px;margin:0 auto;padding:2rem 1.2rem 3rem}h1{font-size:clamp(1.8rem,4vw,2.8rem);margin:0}
+.en{display:block;color:var(--mute);font-style:italic;font-size:.82em}.by{color:var(--mute);margin:.6rem 0 1.4rem}.by strong{color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}
+.chip{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:.4rem .95rem;cursor:pointer;font:inherit;font-size:.9rem}
+.chip:hover,.chip.on{border-color:var(--a);color:var(--a)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem}
+.say{background:none;border:1px solid var(--a);color:var(--a);border-radius:8px;padding:.25rem .8rem;cursor:pointer;font:inherit}.say:hover{background:var(--a);color:#04111d}
+.story{margin-top:2.2rem;background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--a);border-radius:16px;padding:1.6rem}
+.story h2{margin:0 0 .3rem}.who{color:var(--mute);margin:0 0 1rem}.who strong{color:var(--ink)}
+.lang{border-left:5px solid var(--a);border-radius:10px;background:rgba(255,255,255,.04);padding:1rem 1.2rem;margin-top:1rem}.lang+.lang{border-left-color:#7aa2ff}
+.lang span{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--a);margin-bottom:.4rem}.lang+.lang span{color:#7aa2ff}.lang p{margin:0;max-width:75ch}
+.foot{text-align:center;padding:1rem;border-top:1px solid var(--line);color:var(--mute);font-size:.8rem}
