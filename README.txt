@@ -22,6 +22,6 @@ FILES
 
 NEW SECTIONS
 - map.html: interactive map of the Spanish-speaking world by BHAVITAVYA BHASKAR (25BCE5037). Needs internet for map tiles.
-- phrasebook.html: Survival Spanish phrasebook by PAWAN SACHAN (25BCE5037).
+- phrasebook.html: Survival Spanish phrasebook by PAWAN SACHAN (25BCE1679).
 - shared.css: styles shared by map.html and phrasebook.html.
 - start.html now has four cards: Travel Guide, Quiz, Interactive Map, Survival Spanish.
